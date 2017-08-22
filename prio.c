@@ -1,3 +1,6 @@
+////////// Name : Nevin Baiju
+////////// Date : 11-7-17
+// Program for executing jobs in priority scheduling.
 #include<stdio.h>
 main()
 {
@@ -8,7 +11,7 @@ main()
 
         scanf("%d",&n);
         printf("\nEnter Burst times & Priority\n");
-        for(i=0;i<n;i++)
+        for(i=0;i<n;i++)// accepting the burst time
         {
                 printf("\nProcess P[%d] Burst\n",i+1);
                 scanf("%d",&bt[i]);
@@ -16,7 +19,7 @@ main()
                 scanf("%d",&prio[i]);
                 p[i]=i+1;
         }
-        for(i=0;i<n;i++)
+        for(i=0;i<n;i++)// sorting according to priority.
         {
                 pos=i;
                 for(j=i+1;j<n;j++)
@@ -38,7 +41,7 @@ main()
         }
 
         wt[0]=0;
-        for(i=1;i<n;i++)
+        for(i=1;i<n;i++)// calculating the waiting time and remaining time.
         {
                 wt[i]=0;
                 for(j=0;j<i;j++)
@@ -51,7 +54,7 @@ main()
                 turntot+=turn[i];
         }
         printf("\nprocess \t Bursttime  \t Priority\t waiting time \t turnaround time\n");
-        for(i=0;i<n;i++)
+        for(i=0;i<n;i++)// displaying the output
         {
                         printf("   P%d \t    %d  \t  %d  \t %d  \t   %d  \n",p[i],bt[i],prio[i],wt[i],turn[i]);
         }
